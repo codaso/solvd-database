@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="player">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="lastname" type="xs:string"/>
+                <xs:element name="stats">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="gender" type="xs:string"/>
+                            <xs:element name="birthdate" type="xs:date"/>
+                            <xs:element name="height" type="xs:double"/>
+                            <xs:element name="weight" type="xs:double"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="country">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

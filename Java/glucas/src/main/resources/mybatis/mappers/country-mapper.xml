@@ -1,0 +1,28 @@
+<mapper namespace="com.lucas.solvd.com.lucas.solvd.secondblock.dao.ICountryDAO">
+    <sql id="body">
+        c.id as country_id
+        c.name as country_name
+    </sql>
+    <select id="retrieve" resultmap="playersResultMap">
+        SELECT
+        c.id as country_id
+        c.name as country_name
+        <include refid="com.lucas.solvd.com.lucas.solvd.secondblock.dao.IPlayerDAO.body"/>
+        FROM Country c
+        LEFT JOIN Player p<!--left join-->
+        ON c.id=p.id
+        WHERE c.id=#{id}
+    </select>
+    <insert id="insert"
+            useGeneratedKeys="true"
+            keyProperty="id">
+        INSERT INTO Country (name)
+        VALUES (#{name})
+    </insert>
+    <resultMap id="countryResultMap"
+               type="com.lucas.solvd.secondblock.models.Country"
+               autoMapping="false">
+        <id column="country_id" property="id"/>
+        <result column="country_name" property="name"/>
+    </resultMap>
+</mapper>

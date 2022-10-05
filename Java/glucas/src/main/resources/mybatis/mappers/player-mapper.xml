@@ -1,0 +1,23 @@
+<mapper namespace="com.lucas.solvd.com.lucas.solvd.secondblock.dao.IPlayerDAO">
+    <sql id="body">
+        p.id as player_id
+        p.name as player_name
+        p.lastname as player_lastname
+        p.stats as player_stats<!--not primitive-->
+        p.country as player_country<!--not primitive-->
+    </sql>
+    <select id="retrieve" resultmap="playersResultMap">
+        SELECT
+        <include id="body"/>
+        FROM Player p WHERE id=#{id}
+    </select>
+    <resultMap id="playerResultMap"
+               type="com.lucas.solvd.secondblock.models.Player"
+               autoMapping="false">
+        <id column="player_id" property="id"/>
+        <result column="player_name" property="name"/>
+        <result column="player_lastname" property="lastname"/>
+        <result column="player_stats" property="stats"/><!--not primitive-->
+        <result column="player_country" property="country"/><!--not primitive-->
+    </resultMap>
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="db.properties"/>
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC">
+                <property name="defaultReadOnly" value="false"/><!--not able to modify db using mybatis-->
+            </transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${db.driver}"/>
+                <property name="url" value="${db.url}"/>
+                <property name="username" value="${db.username}"/>
+                <property name="password" value="${db.password}"/>
+            </dataSource><!--creates connection pool for me, default 10 connections-->
+        </environment>
+    </environments>
+    <mappers><!--also xml file, control queries, save them to java obj-->
+        <mapper resource=""/><!---->
+    </mappers>
+</configuration>

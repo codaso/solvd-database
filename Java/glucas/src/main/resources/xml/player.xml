@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<player id="1">
+    <name>Manu</name>
+    <lastname>Ginobili</lastname>
+    <stats id="1">
+        <gender>male</gender>
+        <birthdate>2022-10-03</birthdate>
+        <height>0.0</height>
+        <weight>80.5</weight>
+    </stats>
+    <country id="0">
+        <name>Argentina</name>
+    </country>
+</player>
